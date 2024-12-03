@@ -1,56 +1,38 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
   <head>
+    <title>Sarthak Careers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <style>
-      h1{
-        font-family: Roboto;
-        text-align: center;
-        color: rgb(180, 180, 100)
-      }
-      #banner{
-        width:100%;
-        height:360px;
-      }
-      h2{
-        font-family: Roboto;
-        color: rgb(180, 180, 100)
-        text-align: center;
-      }
-      p{
-        font-family: rosybrown; 
-        text-align: center; 
-        color: rgb(80,90,90)
-      }
-      button{
-        height:20px;
-        background-color: rgb(255,150,100);
-      }
-      #btndiv{
-        text-align:center;
-      }
-
-      #container{
-        max-width: 720px;
-        margin: 0 auto 0 auto;
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit:cover;
       }
     </style>
-    <title>
-      Sarthak Carrier
-    </title>
   </head>
   <body>
-    <div id="container">
-    <h1>Sarthak Carriers</h1>
-    <img src="../static/banner.jpg" id="banner">
-      <h1>About Sarthak </h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a leo pharetra, ultricies massa id, feugiat sem. Aliquam sodales, diam sed mattis lobortis, felis arcu bibendum mi, vel dignissim ipsum neque sed dui. Sed vulputate laoreet lorem, at blandit nisi ultrices ac. Cras eget elit sit amet lectus mattis auctor. Etiam faucibus nunc id ipsum elementum, a scelerisque nibh consequat. Phasellus ut odio felis. Nam suscipit leo augue, sit amet lobortis lorem imperdiet id. Integer imperdiet ipsum at semper sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-    </p>
-    <h1> Open positions </h1>
-    <p> show jobs</p>
-    <div id="btndiv">
-      <button> Contact us </button>
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">
+        {{company_name}} Careers
+      </h1>
+      <img class="img-fluid" id="banner" src="./static/banner.jpg" >
+      <h2 class="text-center  mt-2 mb-4">About Jovian</h2>
+      <p class="lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+      <button class="btn btn-primary btn-lg">Contact Us</button>
+        <p class="mt-4">Copyright 2022, Sarthak</p>
+      </div>
     </div>
-    </div>
-  </body >
+  </body>
 </html>
